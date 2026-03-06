@@ -2,8 +2,14 @@
 
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
-
 // Routes publiques
+use App\Http\Controllers\AssistantController;
+
+
+Route::post('/assistant/chat', [AssistantController::class, 'chat'])
+    ->name('assistant.chat');
+
+
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
